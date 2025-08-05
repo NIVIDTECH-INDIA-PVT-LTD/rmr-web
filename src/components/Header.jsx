@@ -50,8 +50,8 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="flex items-center gap-6 text-sm font-semibold">
-          {['/', '/about', '/services', '/verticals', '/contact'].map((path, index) => {
-            const labels = ['HOME', 'ABOUT US', 'OUR SERVICES', 'INDUSTRY VERTICALS', 'CONTACT US'];
+          {['/', '/admin', '/about', '/services', '/verticals', '/contact'].map((path, index) => {
+            const labels = ['HOME', 'Admin' ,'ABOUT US', 'OUR SERVICES', 'INDUSTRY VERTICALS', 'CONTACT US'];
             return (
               <Link
                 key={path}
@@ -73,7 +73,7 @@ export default function Header() {
     </div>
 
     {/* ✅ Mobile Header (sm–md) */}
-    <div className="block lg:hidden px-4 sm:px-6 py-3 flex justify-between items-center">
+    <div className="lg:hidden px-4 sm:px-6 py-3 flex justify-between items-center">
       {/* Logo */}
       <Link href="/">
         <Image src="/images/icons/logo.svg" alt="Logo" width={120} height={30} className="object-contain" />
