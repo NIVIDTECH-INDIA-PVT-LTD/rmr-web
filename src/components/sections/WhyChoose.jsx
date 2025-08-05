@@ -1,8 +1,8 @@
 import Image from "next/image";
 import BusinessChartImg from "/public/images/icons/business.png";
 import BusinessIcon from "/public/images/icons/business.png";
-import ReportIcon from "/public/images/icons/business.png";
-import ActionIcon from "/public/images/icons/business.png";
+import ReportIcon from "/public/images/icons/heroicons-outline_document-report.svg";
+import ActionIcon from "/public/images/icons/mdi_report-finance.svg";
 import MarketIcon from "/public/images/icons/business.png";
 
 export default function WhyChoose() {
@@ -20,13 +20,7 @@ export default function WhyChoose() {
             />
 
             {/* Top Right Overlay Image */}
-            <Image
-              src={BusinessChartImg}
-              alt="Overlay"
-              width={90}
-              height={90}
-              className="absolute -top-10 -right-10 z-10"
-            />
+            
 
             {/* Top Left Tag */}
             <div className="absolute -top-8 -left-6 bg-white rounded-xl shadow-md px-4 py-3 flex items-center gap-3 w-[220px]">
@@ -35,6 +29,7 @@ export default function WhyChoose() {
                 <p className="font-semibold text-gray-800">Business Growth</p>
                 <div className="w-full h-1 bg-gray-200 rounded-full mt-1">
                   <div className="w-3/4 h-full bg-green-500 rounded-full"></div>
+               
                 </div>
               </div>
             </div>
@@ -67,7 +62,7 @@ export default function WhyChoose() {
           {/* Features */}
           <div className="grid sm:grid-cols-2 gap-6 mb-8">
             <div className="flex items-start gap-3">
-              <Image src={ReportIcon} alt="Report" width={28} height={28} />
+              <Image src={ReportIcon} alt="Report" width={40} height={40} />
               <div>
                 <h4 className="font-semibold text-[#1A3365] text-sm">
                   Analyst Report
@@ -79,7 +74,7 @@ export default function WhyChoose() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Image src={ActionIcon} alt="Action" width={28} height={28} />
+              <Image src={ActionIcon} alt="Action" width={40} height={40} />
               <div>
                 <h4 className="font-semibold text-[#1A3365] text-sm">
                   RMR Action

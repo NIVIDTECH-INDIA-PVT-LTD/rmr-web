@@ -1,4 +1,8 @@
 import React from 'react'
+import Image from "next/image";
+import Blog1 from "/public/images/blog1.png";
+import Blog2 from "/public/images/blog2.png";
+import Blog3 from "/public/images/blog3.png";
 
 const BlogSection = () => {
   return (
@@ -14,7 +18,7 @@ const BlogSection = () => {
           <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
             <div className="w-full h-48 bg-gray-200 mb-4 rounded-lg overflow-hidden">
               {/* Replace with Article 1 image */}
-              <img src="article1-image.jpg" alt="5 Essential Strategies" className="w-full h-full object-cover" />
+              <Image src={Blog1} alt="5 Essential Strategies" className="w-full h-full object-cover" />
             </div>
             <p className="text-blue-600 text-sm mb-2">20 June 2025</p>
             <h3 className="text-lg font-medium text-gray-900 mb-2">5 Essential Strategies For Consult Sustainable Of Business Growth</h3>
@@ -25,7 +29,7 @@ const BlogSection = () => {
           <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
             <div className="w-full h-48 bg-gray-200 mb-4 rounded-lg overflow-hidden">
               {/* Replace with Article 2 image */}
-              <img src="article2-image.jpg" alt="The Importance For Networking" className="w-full h-full object-cover" />
+              <Image src={Blog2} alt="The Importance For Networking" className="w-full h-full object-cover" />
             </div>
             <p className="text-blue-600 text-sm mb-2">20 June 2025</p>
             <h3 className="text-lg font-medium text-gray-900 mb-2">The Importance For Networking For Business Consulting Success</h3>
@@ -36,7 +40,7 @@ const BlogSection = () => {
           <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
             <div className="w-full h-48 bg-gray-200 mb-4 rounded-lg overflow-hidden">
               {/* Replace with Article 3 image */}
-              <img src="article3-image.jpg" alt="Building For Business Consulting Strategies" className="w-full h-full object-cover" />
+              <Image src={Blog3} alt="Building For Business Consulting Strategies" className="w-full h-full object-cover" />
             </div>
             <p className="text-blue-600 text-sm mb-2">20 June 2025</p>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Building For Business Consulting Strategies Navigate Uncertainty</h3>

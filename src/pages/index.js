@@ -10,8 +10,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <>
-      <Header />
+    <>         
       <HeroSection />
       <WhyChoose/>
       <ServicesOverview/>

@@ -1,3 +1,9 @@
+import Image from "next/image";
+import WTM from "../../../public/images/icons/water-treatment-image.png";
+import Mask from "../../../public/images/icons/Mask group.png";
+import Lithium from "../../../public/images/icons/Lithium-Ion.png";
+import Bioplastic from "../../../public/images/icons/Bioplastic .png";
+
 export default function ReportsSection() {
   return (
     <section className="px-4 py-14 bg-white">
@@ -15,7 +21,7 @@ export default function ReportsSection() {
           <div className="p-6 flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               {/* Replace with Water Treatment Chemicals Market image */}
-              <img src="water-treatment-image.jpg" alt="Water Treatment Chemicals Market" className="w-full h-full object-cover" />
+              <Image src={WTM} alt="Water Treatment Chemicals Market" className="w-full h-full object-cover" />
             </div>
             <div className="text-center mb-6">
               <h3 className="text-lg font-medium text-gray-900">Water Treatment</h3>
@@ -30,7 +36,7 @@ export default function ReportsSection() {
           <div className="p-6 flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               {/* Replace with Biofuel Market image */}
-              <img src="biofuel-image.jpg" alt="Biofuel Market" className="w-full h-full object-cover" />
+              <Image src={Mask} alt="Biofuel Market" className="w-full h-full object-cover" />
             </div>
             <div className="text-center mb-6">
               <h3 className="text-lg font-medium text-gray-900">Biofuel Market</h3>
@@ -44,7 +50,7 @@ export default function ReportsSection() {
           <div className="p-6 flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               {/* Replace with Lithium-Ion Battery Market image */}
-              <img src="lithium-ion-battery-image.jpg" alt="Lithium-Ion Battery Market" className="w-full h-full object-cover" />
+              <Image src={Lithium} alt="Lithium-Ion Battery Market" className="w-full h-full object-cover" />
             </div>
             <div className="text-center mb-6">
               <h3 className="text-lg font-medium text-gray-900">Lithium-Ion Battery</h3>
@@ -59,7 +65,7 @@ export default function ReportsSection() {
           <div className="p-6 flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               {/* Replace with Bioplastic Packaging Market image */}
-              <img src="bioplastic-packaging-image.jpg" alt="Bioplastic Packaging Market" className="w-full h-full object-cover" />
+              <Image src={Bioplastic} alt="Bioplastic Packaging Market" className="w-full h-full object-cover" />
             </div>
             <div className="text-center mb-6">
               <h3 className="text-lg font-medium text-gray-900">Bioplastic Packaging</h3>

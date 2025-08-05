@@ -1,6 +1,8 @@
 import Image from "next/image";
 import BusinessChartImg from "/public/images/icons/business.png";
 import BackgroundImage from "/public/images/bgtrans.png";
+import ImageRight from "/public/images/image.png";
+
 
 export default function OurServices() {
   return (
@@ -43,7 +45,7 @@ export default function OurServices() {
           <div className="w-full md:w-1/2">
             <div className="relative h-80 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={BusinessChartImg}
+                src={ImageRight}
                 alt="Business Growth"
                 fill
                 className="object-cover"

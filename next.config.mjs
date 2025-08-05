@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export',
+  images: {
+    unoptimized: true, 
+    domains: ['rmr.nividtech.com', 'nividtech.com', 'www.nividtech.com'],
+  },  
 };
 
 export default nextConfig;
