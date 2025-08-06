@@ -1,23 +1,29 @@
 import React from 'react';
 
-const NewsletterCTA = () => {
+const NewsletterCTA = ({
+  heading = "Ready For Expert Guidance?",
+  description = "At RMR, we believe that every business has the potential to thrive with the right guidance and strategies, if you're facing challenges.",
+  placeholder = "Email",
+  buttonText = "SUBSCRIBE",
+}) => {
   return (
-    <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-10 px-4 shadow-xl rounded-xl mx-auto max-w-7xl">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <section
+      className="w-full px-4 sm:px-6 lg:px-8 bg-cover bg-center text-white py-10 shadow-xl rounded-xl"
+      style={{ backgroundImage: "url('/images/footer-bg.png')" }}
+    >
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-left">
-          <h2 className="text-2xl font-bold">Ready For Expert Guidance?</h2>
-          <p className="text-sm mt-2">
-            At RMR, we believe that every business has the potential to thrive with the right guidance and strategies, if you're facing challenges.
-          </p>
+          <h2 className="text-2xl font-bold">{heading}</h2>
+          <p className="text-sm mt-2">{description}</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center w-full md:w-auto">
           <input
             type="email"
-            placeholder="Email"
-            className="p-3 rounded-l-md text-black w-48 focus:outline-none bg-white"
+            placeholder={placeholder}
+            className="p-3 rounded-l-md text-black w-full md:w-48 focus:outline-none bg-white"
           />
           <button className="bg-red-600 text-white p-3 rounded-r-md hover:bg-red-700">
-            SUBSCRIBE
+            {buttonText}
           </button>
         </div>
       </div>

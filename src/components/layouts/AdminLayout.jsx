@@ -7,7 +7,7 @@ export default function AdminLayout({ children }) {
 
   const handleLogout = () => {
     localStorage.removeItem("your_token");
-    router.push("/admin");
+    router.push("/");
   };
 
   const navItems = [

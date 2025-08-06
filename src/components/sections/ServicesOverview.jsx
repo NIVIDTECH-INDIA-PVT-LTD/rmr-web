@@ -1,12 +1,59 @@
 import Image from "next/image";
-import BusinessChartImg from "/public/images/icons/business.png";
 import BackgroundImage from "/public/images/bgtrans.png";
 import ImageRight from "/public/images/image.png";
 
+// Icon Images
+import Icon1 from "/public/images/icons/artical1.png";
+import Icon2 from "/public/images/icons/artical2.png";
+import Icon3 from "/public/images/icons/artical3.png";
+import Arrow from "/public/images/icons/Arow.svg";
+
+// Service Cards
+const serviceCards = [
+  {
+    id: "01",
+    title: "SYNDICATE MARKET REPORTS",
+    description:
+      "Root Market Research provides off the rack, syndicated market research studies, covering 50 industries with niche segments.",
+    icon: Icon1,
+    cardClass: "bg-[#244A77] text-white",
+    borderClass: "",
+    iconBg: "bg-white",
+    lineColor: "border-white",
+    textColor: "text-white",
+    showArrow: true,
+  },
+  {
+    id: "02",
+    title: "CUSTOMIZED MARKET INTELLIGENCE",
+    description:
+      "RMR delivers customized research services to address the specific needs of clients. With its existing research capabilities and qualified team.",
+    icon: Icon2,
+    cardClass: "bg-white text-gray-800",
+    borderClass: "border border-gray-200",
+    iconBg: "bg-[#244A77]",
+    lineColor: "border-[#5A5A5A]",
+    textColor: "text-gray-600",
+    showArrow: false,
+  },
+  {
+    id: "03",
+    title: "MARKET TRACKING REPORTS",
+    description:
+      "RMR tracking study’s purpose is to track meaningful information over time, generating reports every month, empower the identification.",
+    icon: Icon3,
+    cardClass: "bg-white text-gray-800",
+    borderClass: "border border-gray-200",
+    iconBg: "bg-[#244A77]",
+    lineColor: "border-[#5A5A5A]",
+    textColor: "text-gray-600",
+    showArrow: false,
+  },
+];
 
 export default function OurServices() {
   return (
-    <section className="relative px-4 py-16 font-sans">
+    <div className="py-12 bg-white font-sans relative">
       {/* Background Layers */}
       <div className="absolute inset-0 z-0 bg-[#F3F5F5]"></div>
       <div className="absolute inset-0 z-0">
@@ -19,34 +66,33 @@ export default function OurServices() {
         />
       </div>
 
-      {/* Content Container */}
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Main Content Row */}
-        <div className="flex flex-col md:flex-row items-center gap-12 mb-12">
-          {/* Left Column - Text Content */}
+      <section className="relative z-10 mx-auto px-4 md:px-30">
+        <div className="flex flex-col md:flex-row items-center gap-10 mb-16">
           <div className="w-full md:w-1/2">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h1>
-            <h2 className="text-xl text-gray-700 font-medium mb-6">
-              Leading organization in market research service
+            <p className="text-[#1F3C88] text-sm font-semibold mb-2">
+              Our Services
+            </p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 leading-snug">
+              Leading organization in <br />
+              market research service
             </h2>
-            <p className="text-gray-600 mb-8">
-              We are one of the leading organisation in market research,
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              We are one of the leading organisations in market research,
               analysis & forecasting and consulting services provider for
               Fortune 500 companies. Our purpose is to provide essential
               statistical surveying information for your organization or
               association to build trust and solve important problems.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition-colors">
+            <button className="bg-[#D44942] hover:bg-[#c53e38] text-white font-semibold py-3 px-6 rounded-full transition duration-300">
               VIEW ALL SERVICES
             </button>
           </div>
 
-          {/* Right Column - Featured Image */}
           <div className="w-full md:w-1/2">
-            <div className="relative h-80 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
+            <div className="rounded-lg overflow-hidden shadow-lg w-full h-80 md:h-96 relative">
               <Image
                 src={ImageRight}
-                alt="Business Growth"
+                alt="Team"
                 fill
                 className="object-cover"
               />
@@ -54,52 +100,38 @@ export default function OurServices() {
           </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Service 1 */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all">
-            <div className="flex items-start mb-4">
-              <span className="text-2xl font-bold text-gray-900 mr-3">01</span>
-              <h3 className="text-xl font-bold text-gray-900 uppercase">
-                SYNDICATE MARKET REPORTS
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {serviceCards.map((card) => (
+            <div
+              key={card.id}
+              className={`rounded-xl p-6 relative hover:shadow-lg transition ${card.cardClass} ${card.borderClass}`}
+            >
+              <div className="flex items-center justify-between mb-5">
+                <div
+                  className={`p-2 rounded-full w-10 h-10 flex items-center justify-center ${card.iconBg}`}
+                >
+                  <Image src={card.icon} alt="Icon" width={20} height={20} />
+                </div>
+                {card.showArrow && (
+                  <Image src={Arrow} alt="Arrow" width={16} height={16} />
+                )}
+              </div>
+              <h3 className="text-base font-semibold uppercase mb-3">
+                {card.title}
               </h3>
+              <p className={`text-sm leading-relaxed ${card.textColor}`}>
+                {card.description}
+              </p>
+              <div className="mt-6 flex items-center gap-2">
+                <div className={`w-[30%] border-t ${card.lineColor}`}></div>
+                <p className={`text-sm font-medium ${card.textColor}`}>
+                  {card.id}
+                </p>
+              </div>
             </div>
-            <p className="text-gray-600 ml-9">
-              Root Market Research provides off the rack, syndicated market
-              research studies, covering 50 industries with niche segments
-            </p>
-          </div>
-
-          {/* Service 2 */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all">
-            <div className="flex items-start mb-4">
-              <span className="text-2xl font-bold text-gray-900 mr-3">02</span>
-              <h3 className="text-xl font-bold text-gray-900 uppercase">
-                CUSTOMIZED MARKET INTELLIGENCE
-              </h3>
-            </div>
-            <p className="text-gray-600 ml-9">
-              RMR delivers customized research services to address the specific
-              needs of clients. With its existing research capabilities and
-              qualified team
-            </p>
-          </div>
-
-          {/* Service 3 */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all">
-            <div className="flex items-start mb-4">
-              <span className="text-2xl font-bold text-gray-900 mr-3">03</span>
-              <h3 className="text-xl font-bold text-gray-900 uppercase">
-                MARKET TRACKING REPORTS
-              </h3>
-            </div>
-            <p className="text-gray-600 ml-9">
-              RMR tracking study's purpose is to track meaningful information over
-              time, generating reports every month, empower the identification
-            </p>
-          </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
