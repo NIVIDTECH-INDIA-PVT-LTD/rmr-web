@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -27,7 +28,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white shadow-lg rounded-xl p-8">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+
+        <div className="flex justify-center text-2xl font-bold items-center text-center text-gray-800 mb-6">
+          <Image src="/images/icons/logo.svg" alt="Logo" width={100} height={100} />
+        </div>
+
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label className="block text-gray-700 mb-1">Email</label>
