@@ -37,11 +37,11 @@ const reports = [
 
 export default function ReportsSection() {
   return (
-    <section className="w-full px-4 md:px-30 py-14 bg-white">
+    <section className="w-full px-4 md:px-24 py-14 bg-white">
       <div className="w-full text-center">
-        <h1 className="text-3xl font-bold text-[#244A77] mb-2">Reports</h1>
+        <h1 className="font-figtree font-semibold text-[21px] leading-[100%] tracking-[0%] align-middle text-[#244A77] mb-2">Reports</h1>
 
-        <h2 className="text-xl font-semibold text-[#636262] mb-10">
+        <h2 className="font-figtree font-semibold text-[39px] leading-[100%] tracking-[0%] align-middle text-[#636262] mb-4">
           Our Top Reports
         </h2>
 
@@ -49,7 +49,7 @@ export default function ReportsSection() {
           {reports.map((report) => (
             <div
               key={report.id}
-              className="bg-white p-6 flex flex-col justify-between items-center h-auto"
+              className="bg-white p-2 flex flex-col justify-between items-center h-auto"
             >
               <div className="flex flex-col items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
@@ -60,11 +60,11 @@ export default function ReportsSection() {
                   />
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-medium text-gray-900">
+                  <h3 className="font-figtree font-bold text-[18px] leading-[100%] tracking-[0%] align-middle text-[#5A5A5A] mb-1">
                     {report.titleLine1}
                   </h3>
                   {report.titleLine2 && (
-                    <h4 className="text-lg font-medium text-gray-900">
+                    <h4 className="font-figtree font-bold text-[18px] leading-[100%] tracking-[0%] align-middle text-[#5A5A5A]">
                       {report.titleLine2}
                     </h4>
                   )}
@@ -73,7 +73,7 @@ export default function ReportsSection() {
 
               <a
                 href={report.link}
-                className="underline text-[#CD4D4A] px-4 rounded-md mt-2"
+                className="font-figtree font-semibold text-[16px] leading-[100%] tracking-[0%] align-middle text-[#CD4D4A] underline decoration-solid underline-offset-[0%] decoration-[0%] mt-4"
               >
                 View Report
               </a>

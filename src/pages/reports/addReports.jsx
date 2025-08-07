@@ -62,8 +62,9 @@ export default function AddReport() {
 
   return (
     <AdminLayout>
-      <div className="py-10 min-h-screen bg-gray-50 px-6 pb-10">
-        <div className="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
+      <div className="h-[90%] max-h-screen overflow-y-auto pb-10">
+
+        <div className="w-full mx-auto bg-white shadow rounded-lg p-6">
           <div className="flex items-center gap-2 mb-6">
             <button
               onClick={() => router.back()}
@@ -81,7 +82,7 @@ export default function AddReport() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full border px-4 py-2 rounded-md text-black"
+                className="w-full border border-gray-200 px-4 py-2 rounded-md text-black"
                 placeholder="Enter title"
                 required
               />
@@ -110,7 +111,7 @@ export default function AddReport() {
               <select
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
-                className="w-full border cursor-pointer px-4 py-2 text-black rounded-md"
+                className="w-full border border-gray-200 cursor-pointer px-4 py-2 text-black rounded-md"
                 required
               >
                 <option value="">-- Select Year --</option>
@@ -131,7 +132,7 @@ export default function AddReport() {
                 type="text"
                 value={reportId}
                 onChange={(e) => setReportId(e.target.value)}
-                className="w-full border text-black px-4 py-2 rounded-md"
+                className="w-full border border-gray-200 text-black px-4 py-2 rounded-md"
                 placeholder="e.g., RPT001"
                 required
               />

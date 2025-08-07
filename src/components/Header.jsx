@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-// ✅ Dynamic content config
 const headerContent = {
   topBar: {
     message: "Get Free Business Consulting Today?",
@@ -34,6 +33,7 @@ const headerContent = {
   ],
   mobileNavLinks: [
     { label: "HOME", href: "/" },
+     { label: "ADMIN", href: "/admin" },
     { label: "ABOUT US", href: "/about" },
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/verticals" },
@@ -60,9 +60,8 @@ export default function Header() {
           scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-white"
         } absolute`}
       >
-        {/* ✅ Desktop Header */}
+
         <div className="hidden lg:block">
-          {/* Top Info Bar */}
           <div className="flex text-sm py-3 px-4 sm:px-6 justify-between items-center">
             <p className="font-[Figtree] font-semibold text-[16px] text-[#595959]">
               {headerContent.topBar.message}{" "}
@@ -89,7 +88,6 @@ export default function Header() {
 
           {/* Main Nav */}
           <div className="px-4 sm:px-6 py-2 flex justify-between items-center">
-            {/* Logo */}
             <Link href="/">
               <Image
                 src={headerContent.logo.src}
@@ -113,7 +111,6 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Social Icons */}
             <div className="flex gap-2">
               {headerContent.socialIcons.map((icon, index) => (
                 <Image
@@ -128,9 +125,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ✅ Mobile Header */}
         <div className="lg:hidden px-4 sm:px-6 py-3 flex justify-between items-center">
-          {/* Logo */}
           <Link href="/">
             <Image
               src={headerContent.logo.src}
@@ -141,7 +136,6 @@ export default function Header() {
             />
           </Link>
 
-          {/* Menu Toggle */}
           <button
             className="p-2 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -167,7 +161,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* ✅ Mobile Menu Dropdown */}
         {isMenuOpen && (
           <div className="block lg:hidden bg-white px-4 pb-4 shadow-lg">
             <nav className="flex flex-col space-y-3">

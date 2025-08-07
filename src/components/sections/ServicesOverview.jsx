@@ -1,14 +1,11 @@
 import Image from "next/image";
 import BackgroundImage from "/public/images/bgtrans.png";
 import ImageRight from "/public/images/image.png";
-
-// Icon Images
 import Icon1 from "/public/images/icons/artical1.png";
 import Icon2 from "/public/images/icons/artical2.png";
 import Icon3 from "/public/images/icons/artical3.png";
 import Arrow from "/public/images/icons/Arow.svg";
 
-// Service Cards
 const serviceCards = [
   {
     id: "01",
@@ -54,7 +51,6 @@ const serviceCards = [
 export default function OurServices() {
   return (
     <div className="py-12 bg-white font-sans relative">
-      {/* Background Layers */}
       <div className="absolute inset-0 z-0 bg-[#F3F5F5]"></div>
       <div className="absolute inset-0 z-0">
         <Image
@@ -66,24 +62,24 @@ export default function OurServices() {
         />
       </div>
 
-      <section className="relative z-10 mx-auto px-4 md:px-30">
+      <section className="relative z-10 mx-auto px-4 md:px-24">
         <div className="flex flex-col md:flex-row items-center gap-10 mb-16">
           <div className="w-full md:w-1/2">
-            <p className="text-[#1F3C88] text-sm font-semibold mb-2">
+            <p className="font-figtree font-semibold text-[21px] leading-[100%] text-[#244A77] align-middle mb-1">
               Our Services
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 leading-snug">
+            <h2 className="font-figtree font-semibold text-[39px] leading-[100%] text-[#636262] align-middle mb-2">
               Leading organization in <br />
               market research service
             </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="font-figtree font-medium text-[16px] leading-[100%] text-[#5A5A5A] align-middle my-6">
               We are one of the leading organisations in market research,
               analysis & forecasting and consulting services provider for
               Fortune 500 companies. Our purpose is to provide essential
               statistical surveying information for your organization or
               association to build trust and solve important problems.
             </p>
-            <button className="bg-[#D44942] hover:bg-[#c53e38] text-white font-semibold py-3 px-6 rounded-full transition duration-300">
+            <button className="bg-[#CD4D4A] text-white font-figtree font-semibold text-[18px] leading-[100%] tracking-[0%] text-center align-middle uppercase py-3 px-6 rounded-full">
               VIEW ALL SERVICES
             </button>
           </div>
@@ -116,10 +112,10 @@ export default function OurServices() {
                   <Image src={Arrow} alt="Arrow" width={16} height={16} />
                 )}
               </div>
-              <h3 className="text-base font-semibold uppercase mb-3">
+              <h3 className="font-figtree font-bold text-[18px] leading-[100%] tracking-[0%] align-middle uppercase mb-3">
                 {card.title}
               </h3>
-              <p className={`text-sm leading-relaxed ${card.textColor}`}>
+              <p className={`font-figtree font-medium text-[16px] leading-[100%] tracking-[0%] align-middle ${card.textColor}`}>
                 {card.description}
               </p>
               <div className="mt-6 flex items-center gap-2">

@@ -5,7 +5,6 @@ import ReportIcon from "/public/images/icons/heroicons-outline_document-report.s
 import ActionIcon from "/public/images/icons/mdi_report-finance.svg";
 import MarketIcon from "/public/images/icons/Grow.svg";
 
-// Dynamic content object
 const whyChooseContent = {
   heading: {
     subtitle: "Why Choose RMR",
@@ -47,13 +46,11 @@ const whyChooseContent = {
 
 export default function WhyChoose() {
   return (
-    <div className="my-12 py-12 bg-white font-sans">
-      <div className="flex flex-col lg:flex-row items-stretch gap-4">
-        {/* Left Content */}
+    <div className="my-8 py-8 sm:my-10 sm:py-10 lg:my-12 lg:py-12 bg-white font-sans">
+      <div className="flex flex-col lg:flex-row items-stretch gap-8 sm:gap-10 lg:gap-4 px-4 sm:px-6 lg:px-0">
         <div className="relative w-full lg:w-1/2 flex justify-center">
-          <div className="relative w-[100%] max-w-[70%]">
-            {/* Background Decorative Icon */}
-            <div className="absolute -top-12 -right-12 z-0">
+          <div className="relative w-full max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
+            <div className="absolute -top-10 -right-10 sm:-top-12 sm:-right-12 z-0">
               <Image
                 src="/images/icons/bg-grow-icon.png"
                 alt="Decorative Grow Icon"
@@ -63,15 +60,13 @@ export default function WhyChoose() {
               />
             </div>
 
-            {/* Main Image */}
             <Image
               src={whyChooseContent.image.main}
               alt="Business Growth"
               className="rounded-lg w-full h-auto object-cover relative z-10"
             />
 
-            {/* Top Left Tag */}
-            <div className="absolute -top-8 -left-6 bg-white rounded-xl shadow-md px-4 py-3 flex items-center gap-3 w-[220px] z-20">
+            <div className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 bg-white rounded-xl shadow-md px-3 sm:px-4 py-3 flex items-center gap-3 w-[90%] sm:w-[220px] z-20">
               <div className="bg-[#244A77] rounded-sm w-[30px] h-[30px] flex items-center justify-center">
                 <Image
                   src={whyChooseContent.image.topLeft.icon}
@@ -80,7 +75,7 @@ export default function WhyChoose() {
                 />
               </div>
               <div className="w-full">
-                <p className="font-semibold text-gray-800 text-sm">
+                <p className="font-figtree font-semibold text-[16px] sm:text-[17px] leading-[100%] text-[#636262]">
                   {whyChooseContent.image.topLeft.label}
                 </p>
                 <div className="w-full h-1 bg-gray-200 rounded-full mt-1">
@@ -102,36 +97,33 @@ export default function WhyChoose() {
               </div>
             </div>
 
-            {/* Bottom Right Tag */}
-            <div className="absolute -bottom-8 -right-6 bg-white rounded-xl shadow-md px-4 py-3 flex items-center gap-3 w-[260px] z-20">
+            <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-white rounded-xl px-4 py-3 flex flex-col items-start gap-2 w-[90%] sm:w-[300px] z-20">
               <Image
                 src={whyChooseContent.image.bottomRight.icon}
                 alt="icon"
                 width={30}
                 height={30}
               />
-              <p className="text-sm font-medium text-gray-700">
+              <p className="font-figtree font-semibold text-[16px] sm:text-[17px] leading-[100%] text-[#636262]">
                 {whyChooseContent.image.bottomRight.text}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start items-center px-4 lg:px-0">
-          <div className="w-full max-w-[90%]">
-            {/* Heading */}
-            <h4 className="text-[#244A77] text-[20px] font-semibold mb-3">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start items-center px-0">
+          <div className="w-full max-w-[100%] sm:max-w-[90%]">
+            <h4 className="font-semibold text-[18px] sm:text-[21px] leading-[100%] text-[#244A77] mb-3">
               {whyChooseContent.heading.subtitle}
             </h4>
-            <h2 className="text-[#636262] text-[38px] font-bold whitespace-pre-line leading-tight mb-4">
+            <h2 className="text-[#636262] text-[28px] sm:text-[34px] lg:text-[39px] font-bold whitespace-pre-line leading-tight mb-4">
               {whyChooseContent.heading.title}
             </h2>
-            <p className="text-[#5A5A5A] text-[16px] font-medium whitespace-pre-line leading-[1.6] mb-10">
+            <p className="text-[#5A5A5A] text-[15px] sm:text-[16px] font-medium whitespace-pre-line leading-[1.6] mb-8 sm:mb-10">
               {whyChooseContent.heading.description}
             </p>
 
-            {/* Features */}
-            <div className="grid sm:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 sm:mb-10">
               {whyChooseContent.features.map((feature, index) => (
                 <div className="flex items-start gap-4" key={index}>
                   <Image
@@ -141,10 +133,10 @@ export default function WhyChoose() {
                     height={32}
                   />
                   <div>
-                    <h5 className="text-[#1A3365] text-sm font-semibold mb-1">
+                    <h5 className="text-[#244A77] font-semibold text-[17px] sm:text-[18px] mb-1">
                       {feature.title}
                     </h5>
-                    <p className="text-gray-600 text-sm leading-snug">
+                    <p className="text-[#5A5A5A] font-medium text-[15px] sm:text-[16px] leading-[100%]">
                       {feature.description}
                     </p>
                   </div>
@@ -152,10 +144,9 @@ export default function WhyChoose() {
               ))}
             </div>
 
-            {/* Button */}
             <a
               href={whyChooseContent.button.link}
-              className="bg-[#D94A3F] text-white text-sm font-semibold rounded-full px-6 py-3 hover:bg-red-600 transition-all"
+              className="bg-[#CD4D4A] text-white rounded-full px-6 py-3 font-semibold text-[16px] sm:text-[18px] uppercase text-center block w-fit"
             >
               {whyChooseContent.button.label}
             </a>

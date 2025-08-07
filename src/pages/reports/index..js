@@ -31,8 +31,8 @@ export default function ReportsPage() {
 
   return (
     <AdminLayout>
-      <div className="py-10 min-h-screen bg-gray-50 px-6 pb-10">
-        <div className="max-w-6xl mx-auto">
+      <div className="py-10 h-[70%] max-h-screen overflow-y-auto px-6 pb-10">
+        <div className="w-full mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-semibold text-gray-800">Reports</h1>
             <button
@@ -44,8 +44,8 @@ export default function ReportsPage() {
           </div>
 
           <div className="bg-white shadow-md rounded-xl overflow-x-auto">
-            <table className="min-w-full text-sm text-left">
-              <thead className="bg-gray-100 text-gray-600 uppercase text-xs">
+            <table className="bg-white min-w-full text-sm text-left">
+              <thead className="bg-white border-b text-gray-600 uppercase text-xs">
                 <tr>
                   <th className="px-6 py-3">Published Date</th>
                   <th className="px-6 py-3">Year</th>
