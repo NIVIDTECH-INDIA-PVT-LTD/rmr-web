@@ -71,33 +71,33 @@ export default function AddReport() {
             >
               <ArrowLeft className="w-5 h-5 text-gray-700" />
             </button>
-            <h1 className="text-2xl font-bold">Add Report</h1>
+            <h1 className="text-2xl font-bold text-black">Add Report</h1>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block font-medium mb-1">Report Title</label>
+              <label className="block text-black font-medium mb-1">Report Title</label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full border px-4 py-2 rounded-md"
+                className="w-full border px-4 py-2 rounded-md text-black"
                 placeholder="Enter title"
                 required
               />
             </div>
 
             <div className="flex items-center gap-4">
-              <label className="font-medium">Featured:</label>
+              <label className="font-medium text-black">Featured:</label>
               <button
                 type="button"
                 onClick={() => setFeatured(!featured)}
-                className={`w-14 h-7 flex items-center rounded-full px-1 transition ${
+                className={`w-14 h-7 flex items-center text-black rounded-full px-1 transition ${
                   featured ? "bg-green-500" : "bg-gray-300"
                 }`}
               >
                 <div
-                  className={`bg-white w-5 h-5 rounded-full shadow-md transform transition-transform ${
+                  className={`bg-white w-5 text-black h-5 rounded-full shadow-md transform transition-transform ${
                     featured ? "translate-x-7" : "translate-x-0"
                   }`}
                 />
@@ -110,7 +110,7 @@ export default function AddReport() {
               <select
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
-                className="w-full border cursor-pointer px-4 py-2 rounded-md"
+                className="w-full border cursor-pointer px-4 py-2 text-black rounded-md"
                 required
               >
                 <option value="">-- Select Year --</option>
@@ -131,7 +131,7 @@ export default function AddReport() {
                 type="text"
                 value={reportId}
                 onChange={(e) => setReportId(e.target.value)}
-                className="w-full border px-4 py-2 rounded-md"
+                className="w-full border text-black px-4 py-2 rounded-md"
                 placeholder="e.g., RPT001"
                 required
               />
@@ -148,7 +148,7 @@ export default function AddReport() {
                     onEditorStateChange={setTabOneEditorState}
                     wrapperClassName="rounded-lg"
                     editorClassName="p-4 min-h-[150px]"
-                    toolbarClassName="border-b border-gray-200 px-2"
+                    toolbarClassName="border-b text-black border-gray-200 px-2"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function AddReport() {
                     onEditorStateChange={setTabTwoEditorState}
                     wrapperClassName="rounded-lg"
                     editorClassName="p-4 min-h-[150px]"
-                    toolbarClassName="border-b border-gray-200 px-2"
+                    toolbarClassName="border-b text-black border-gray-200 px-2"
                   />
                 </div>
               </div>
