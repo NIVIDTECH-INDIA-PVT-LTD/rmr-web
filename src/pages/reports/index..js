@@ -37,7 +37,7 @@ export default function ReportsPage() {
             <h1 className="text-3xl font-semibold text-gray-800">Reports</h1>
             <button
               onClick={() => router.push("/reports/addReports")}
-              className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+              className="bg-[#244A77] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
             >
               + Add Report
             </button>
