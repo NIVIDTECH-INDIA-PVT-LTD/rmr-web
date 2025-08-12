@@ -1,23 +1,7 @@
-// import "@/styles/globals.css";
-
-// import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
-
-// export default function App({ Component, pageProps }) {
-//   return (
-//     <>
-//       <Header />
-//       <Component {...pageProps} />
-//       <Footer />
-//     </>
-//   );
-// }
-
-
-import "@/styles/globals.css";
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import "@/styles/globals.css";
 
 //  HIDE the Header, Footer (Public Layout)
 const privateRoutes = ["/reports", "/admin"];
