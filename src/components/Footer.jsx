@@ -79,7 +79,7 @@ const Footer = ({
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 font-figtree font-medium text-[16px]">
                 <img
-                  src="/images/icons/location-icon.svg"
+                  src="../images/icons/location-icon.svg"
                   alt="Address icon"
                   className="w-5 h-5 mt-1"
                 />
@@ -89,7 +89,7 @@ const Footer = ({
               </li>
               <li className="flex items-center space-x-2 font-figtree font-medium text-[16px]">
                 <img
-                  src="/images/icons/phone-icon.svg"
+                  src="../images/icons/phone-icon.svg"
                   alt="Phone icon"
                   className="w-5 h-5"
                 />
@@ -97,7 +97,7 @@ const Footer = ({
               </li>
               <li className="flex items-center space-x-2 font-figtree font-medium text-[16px]">
                 <img
-                  src="/images/icons/email-icon.svg"
+                  src="../images/icons/email-icon.svg"
                   alt="Email icon"
                   className="w-5 h-5"
                 />

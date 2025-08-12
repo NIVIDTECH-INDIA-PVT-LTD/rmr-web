@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Blog1 from "/public/images/blog1.png";
-import Blog2 from "/public/images/blog2.png";
-import Blog3 from "/public/images/blog3.png";
-import calendar from "/public/images/icons/calendar.svg";
+import Blog1 from "images/blog1.png";
+import Blog2 from "images/blog2.png";
+import Blog3 from "images/blog3.png";
+import calendar from "images/icons/calendar.svg";
 
 const blogPosts = [
   {
