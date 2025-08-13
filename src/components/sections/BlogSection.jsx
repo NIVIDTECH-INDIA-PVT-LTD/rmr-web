@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import blog1 from "images/blog1.png";
+import blog1 from "images/blogOne.png";
 import blog2 from "images/blog2.png";
 import blog3 from "images/blog3.png";
 import calendar from "images/icons/calendar.svg";
