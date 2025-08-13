@@ -1,27 +1,27 @@
 import React from "react";
 import Image from "next/image";
-import Blog1 from "images/blog1.png";
-import Blog2 from "images/blog2.png";
-import Blog3 from "images/blog3.png";
+import blog1 from "images/blog1.png";
+import blog2 from "images/blog2.png";
+import blog3 from "images/blog3.png";
 import calendar from "images/icons/calendar.svg";
 
 const blogPosts = [
   {
-    image: Blog1,
+    image: blog1,
     date: "20 June 2025",
     title: "5 Essential Strategies For Consult Sustainable Of Business Growth",
     icon: calendar,
     link: "#",
   },
   {
-    image: Blog2,
+    image: blog2,
     date: "20 June 2025",
     title: "The Importance For Networking For Business Consulting Success",
     icon: calendar,
     link: "#",
   },
   {
-    image: Blog3,
+    image: blog3,
     date: "20 June 2025",
     title: "Building For Business Consulting Strategies Navigate Uncertainty",
     icon: calendar,
