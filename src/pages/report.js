@@ -24,7 +24,7 @@ const Report = () => {
             <IntroSection />
             <DefinitionSection />
             <MarketOverviewSection />
-            <KeyDriversSection />
+            <KeyDriversSection/>
             <ChallengesSection />
             <SegmentationSection />
           </div>

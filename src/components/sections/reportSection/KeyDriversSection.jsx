@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import MarketDriversBarChart from "./MarketDriversBarChart";
 
 const KeyDriversSection = () => {
   const drivers = [
@@ -69,7 +70,10 @@ const KeyDriversSection = () => {
         </ul>
       </div>
 
-      <div className="mt-6 w-full max-w-4xl mx-auto flex justify-center">
+      <div className="mt-6 w-full max-w-3xl mx-auto flex justify-center">
+
+        {/* <MarketDriversBarChart/> */}
+
         <Image
           src="/images/market.png"
           alt="Market Drivers Chart"

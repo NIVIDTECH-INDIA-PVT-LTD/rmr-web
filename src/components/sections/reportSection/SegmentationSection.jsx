@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MarketSharePieChart from "./MarketSharePieChart";
 
 export default function SegmentationSection() {
   const productType = [
@@ -44,6 +45,9 @@ export default function SegmentationSection() {
       </ul>
 
       <div className="mt-6 w-full max-w-4xl mx-auto flex justify-center">
+
+        {/* <MarketSharePieChart/> */}
+        
         <Image
           src="/images/Market-Share.png"
           alt="Market Drivers Chart"
