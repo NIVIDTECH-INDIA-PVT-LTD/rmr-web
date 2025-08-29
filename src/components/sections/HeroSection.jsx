@@ -102,9 +102,10 @@ const heroContent = {
   },
   images: {
     mobile: "/images/home_right_full.png",
-    desktop: ["/images/homeright.png", 
-              // "/images/home_right_full.png"
-            ],
+    desktop: [
+      "/images/homeright.png",
+      // "/images/home_right_full.png"
+    ],
     background: "/images/homebg.png",
   },
 };
@@ -181,10 +182,10 @@ export default function HeroSection() {
               priority
             />
 
-            <div className="absolute left-[670px] bottom-[75px] flex items-center gap-4">
+            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 md:left-auto md:right-16 md:translate-x-0 flex items-center gap-4">
               <button
                 onClick={prevImage}
-                className="bg-white cursor-pointer bg-opacity-70 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center text-black shadow-md"
+                className="bg-white cursor-pointer bg-opacity-70 hover:bg-opacity-100 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-black shadow-md"
                 aria-label="Previous Image"
               >
                 <Image
@@ -197,7 +198,7 @@ export default function HeroSection() {
 
               <button
                 onClick={nextImage}
-                className="bg-white cursor-pointer bg-opacity-70 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center text-black shadow-md"
+                className="bg-white cursor-pointer bg-opacity-70 hover:bg-opacity-100 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-black shadow-md"
                 aria-label="Next Image"
               >
                 <Image

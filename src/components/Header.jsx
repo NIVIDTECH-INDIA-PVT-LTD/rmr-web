@@ -56,7 +56,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div
-        className={`top-0 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[90%] transition-all duration-300 rounded-md ${
+        className={`top-0 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[90%] transition-all duration-300 rounded-b-md ${
           scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-white"
         } absolute`}
       >

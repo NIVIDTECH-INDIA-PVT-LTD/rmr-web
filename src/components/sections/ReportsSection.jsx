@@ -10,28 +10,28 @@ const reports = [
     image: WTM,
     titleLine1: "Water Treatment",
     titleLine2: "Chemicals Market",
-    link: "#",
+    link: "/report",
   },
   {
     id: 2,
     image: Mask,
     titleLine1: "Biofuel Market",
     titleLine2: "",
-    link: "#",
+    link: "/report",
   },
   {
     id: 3,
     image: Bioplastic,
     titleLine1: "Lithium-Ion Battery",
     titleLine2: "Market",
-    link: "#",
+    link: "/report",
   },
   {
     id: 4,
     image: Lithium,
     titleLine1: "Bioplastic Packaging",
     titleLine2: "Market",
-    link: "#",
+    link: "/report",
   },
 ];
 
