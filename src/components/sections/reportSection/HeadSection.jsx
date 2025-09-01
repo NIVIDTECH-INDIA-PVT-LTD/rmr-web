@@ -1,19 +1,16 @@
 import React from "react";
 import Tabs from "./Tabs";
 
-const HeadSection = () => {
+const HeadSection = ({reportTitle,year,id}) => {
   return (
     <div className="grid grid-cols-12 gap-4 items-start">
       {/* Left Section */}
       <div className="col-span-12 md:col-span-8">
         <h1 className="font-figtree font-bold text-[20px] leading-[100%] tracking-normal align-middle text-[#244A77]">
-          Sorbitan Esters Market Size, Share & Forecast Analysis (2025–2030) –{" "}
-          <br />
-          By Value (USD Million) & Volume (Tons)
+          {reportTitle}
         </h1>
         <p className="font-figtree font-semibold text-[15px] leading-[100%] tracking-normal align-middle text-[#636262] mt-4">
-          Published Date: Apr, 2024 | Base Year for Estimate: 2019 | Report ID:
-          RMR-I-1102-116
+          Published Date: Apr, 2024 | Base Year for Estimate: {year} | Report ID: {id}
         </p>
 
         <div className="mt-6">

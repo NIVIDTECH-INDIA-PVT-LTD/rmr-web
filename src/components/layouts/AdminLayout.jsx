@@ -28,9 +28,8 @@ export default function AdminLayout({ children }) {
 
         <nav className="flex flex-col gap-3 flex-grow px-2 py-6">
           {navItems.map((item, index) => (
-            <div className="w-full hover:bg-white hover:text-black">
-              <button
-                key={index}
+            <div className="w-full hover:bg-white hover:text-black"  key={index}>
+              <button               
                 onClick={() => router.push(item.path)}
                 className={`flex items-center gap-3 px-3 py-2 cursor-pointer text-left transition rounded-md w-full ${
                   router.pathname === item.path

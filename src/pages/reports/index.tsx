@@ -1,12 +1,13 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Edit, Trash2 } from "lucide-react";
 import AdminLayout from "@/components/layouts/AdminLayout";
+import ConfirmModal from "@/components/ConfirmModal";
 
 export default function ReportsPage() {
 	const router = useRouter();
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [reportToDelete, setReportToDelete] = useState(null);
 	const [reports, setReports] = useState([]);
 
 
@@ -16,18 +17,52 @@ export default function ReportsPage() {
 			.then(setReports)
 			.catch(() => setReports([]));
 	}, []);
-	
-	const handleDelete = (reportToDelete) => {
-		const confirmDelete = window.confirm(`Delete report ${reportToDelete.reportId}?`);
-		if (confirmDelete) {
+
+	const openModal = (report) => {
+		setReportToDelete(report);
+		setIsModalOpen(true);
+	};
+
+	const handleConfirmDelete = async () => {
+		console.log("Deleting report:", reportToDelete.reportId);
+		
+		try {
+			const res = await fetch(`/api/reports/${reportToDelete.title}`, {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json" // optional if you don’t send body
+				},
+			});
+
+			if (!res.ok) {
+				throw new Error("Failed to delete report");
+			}
+
+			// Remove deleted report from local state
 			const updated = reports.filter((report) => report.reportId !== reportToDelete.reportId);
 			setReports(updated);
+
+			// Optionally, update localStorage if you are using it
 			localStorage.setItem("reports", JSON.stringify(updated));
+
+			alert(`Report ${reportToDelete.reportId} deleted successfully`);
+		} catch (error) {
+			console.error(error);
+			alert(`Error deleting report: ${error.message}`);
 		}
+
+		setIsModalOpen(false);
+		setReportToDelete(null);
 	};
-	
+
+	const handleCancel = () => {
+		setIsModalOpen(false);
+		setReportToDelete(null);
+	};	
+
 	const handleEdit = (report) => {
-		router.push(`/reports/editReport?reportId=${report.title}`);
+		const fileName =  `${report.title.replace(/[^a-z0-9]/gi, "_").toLowerCase()}`;
+		router.push(`/reports/editReport?id=${fileName}`);
 	};
 
 	return (
@@ -67,7 +102,7 @@ export default function ReportsPage() {
 									</tr>
 								) : (
 									reports.map((report, i) => (
-										<tr key={i} className="border-t hover:bg-gray-50" key={report.reportId}>
+										<tr key={i} className="border-t hover:bg-gray-50">
 											<td className="px-6 py-4">{report.publishedDate}</td>
 											<td className="px-6 py-4">{report.year}</td>
 											<td className="px-6 py-4">{report.reportId}</td>
@@ -91,14 +126,14 @@ export default function ReportsPage() {
 													className="text-blue-600 cursor-pointer hover:text-blue-800"
 													title="Edit"
 												>
-													<Edit size={18} />
+												<Edit size={18} />
 												</button>
 												<button
-													onClick={() => handleDelete(report)}
+													onClick={() => openModal(report)}
 													className="text-red-600 cursor-pointer hover:text-red-800"
 													title="Delete"
 												>
-													<Trash2 size={18} />
+												<Trash2 size={18} />
 												</button>
 											</td>
 										</tr>
@@ -109,6 +144,13 @@ export default function ReportsPage() {
 					</div>
 				</div>
 			</div>
+			<ConfirmModal
+				isOpen={isModalOpen}
+				title="Confirm Delete"
+				message={`Are you sure you want to delete report ${reportToDelete?.reportId}?`}
+				onConfirm={handleConfirmDelete}
+				onCancel={handleCancel}
+			/>
 		</AdminLayout>
 	);
 }

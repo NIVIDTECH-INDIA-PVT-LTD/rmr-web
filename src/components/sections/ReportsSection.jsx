@@ -1,41 +1,52 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import WTM from "../../../public/images/icons/water-treatment-image.png";
 import Mask from "../../../public/images/icons/Mask group.png";
 import Lithium from "../../../public/images/icons/Lithium-Ion.png";
 import Bioplastic from "../../../public/images/icons/Bioplastic .png";
 
-const reports = [
-  {
-    id: 1,
-    image: WTM,
-    titleLine1: "Water Treatment",
-    titleLine2: "Chemicals Market",
-    link: "/report",
-  },
-  {
-    id: 2,
-    image: Mask,
-    titleLine1: "Biofuel Market",
-    titleLine2: "",
-    link: "/report",
-  },
-  {
-    id: 3,
-    image: Bioplastic,
-    titleLine1: "Lithium-Ion Battery",
-    titleLine2: "Market",
-    link: "/report",
-  },
-  {
-    id: 4,
-    image: Lithium,
-    titleLine1: "Bioplastic Packaging",
-    titleLine2: "Market",
-    link: "/report",
-  },
-];
+// const reports = [
+//   {
+//     id: 1,
+//     image: WTM,
+//     titleLine1: "Water Treatment",
+//     titleLine2: "Chemicals Market",
+//     link: "/report",
+//   },
+//   {
+//     id: 2,
+//     image: Mask,
+//     titleLine1: "Biofuel Market",
+//     titleLine2: "",
+//     link: "/report",
+//   },
+//   {
+//     id: 3,
+//     image: Bioplastic,
+//     titleLine1: "Lithium-Ion Battery",
+//     titleLine2: "Market",
+//     link: "/report",
+//   },
+//   {
+//     id: 4,
+//     image: Lithium,
+//     titleLine1: "Bioplastic Packaging",
+//     titleLine2: "Market",
+//     link: "/report",
+//   },
+// ];
 
 export default function ReportsSection() {
+
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+      fetch("/api/reports")
+        .then((res) => res.json())
+        .then(setReports)
+        .catch(() => setReports([]));
+    }, []);
+  
   return (
     <section className="w-full px-4 md:px-24 py-14 bg-white">
       <div className="w-full text-center">
@@ -54,25 +65,27 @@ export default function ReportsSection() {
               <div className="flex flex-col items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
                   <Image
-                    src={report.image}
-                    alt={report.titleLine1}
+                    src={report.file}
+                    alt={report.title}
                     className="w-full h-full object-cover"
+                    width={100}
+                    height={100}
                   />
                 </div>
                 <div className="text-center">
                   <h3 className="font-figtree font-bold text-[18px] leading-[100%] tracking-[0%] align-middle text-[#5A5A5A] mb-1">
-                    {report.titleLine1}
+                    {report.title}
                   </h3>
-                  {report.titleLine2 && (
+                  {/* {report.titleLine2 && (
                     <h4 className="font-figtree font-bold text-[18px] leading-[100%] tracking-[0%] align-middle text-[#5A5A5A]">
                       {report.titleLine2}
                     </h4>
-                  )}
+                  )} */}
                 </div>
               </div>
 
               <a
-                href={report.link}
+                href={"/report?id="+report.title}
                 className="font-figtree font-semibold text-[16px] leading-[100%] tracking-[0%] align-middle text-[#CD4D4A] underline decoration-solid underline-offset-[0%] decoration-[0%] mt-4"
               >
                 View Report
@@ -83,4 +96,10 @@ export default function ReportsSection() {
       </div>
     </section>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+  return { props: { data } };
 }
