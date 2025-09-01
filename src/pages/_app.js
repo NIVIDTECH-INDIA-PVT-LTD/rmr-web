@@ -8,15 +8,20 @@ const privateRoutes = ["/reports", "/admin"];
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-
   const isPrivateRoute = privateRoutes.some((route) =>
     router.pathname.startsWith(route)
   );
 
+  const content = <Component {...pageProps} />;
+
   return (
     <>
       {!isPrivateRoute && <Header />}
-      <Component {...pageProps} />
+      {isPrivateRoute ? (
+        content
+      ) : (
+        <div className="frontend-body">{content}</div>
+      )}
       {!isPrivateRoute && <Footer />}
     </>
   );

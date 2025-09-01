@@ -21,11 +21,11 @@ const headerContent = {
   },
   navLinks: [
     { label: "HOME", href: "/" },
-    { label: "ADMIN", href: "/admin" },
     { label: "ABOUT US", href: "/about" },
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/verticals" },
     { label: "CONTACT US", href: "/contact" },
+    // { label: "ADMIN", href: "/admin" },
   ],
   socialIcons: [
     { src: "/images/icons/fbicon.svg", alt: "Facebook" },
@@ -33,11 +33,11 @@ const headerContent = {
   ],
   mobileNavLinks: [
     { label: "HOME", href: "/" },
-     { label: "ADMIN", href: "/admin" },
     { label: "ABOUT US", href: "/about" },
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/verticals" },
     { label: "CONTACT US", href: "/contact" },
+    //  { label: "ADMIN", href: "/admin" },
   ],
 };
 

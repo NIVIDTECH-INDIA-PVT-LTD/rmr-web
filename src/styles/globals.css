@@ -1,8 +1,123 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-body {
-  font-family: 'Figtree', sans-serif;
+.frontend-body {
+  font-family: "Figtree", sans-serif;
   max-width: 1480px;
   margin: auto;
+}
+
+/* ======================================================================
+      1.)  Report Page Css
+      1.1) Summary of Contents styles
+      1.2) Table of Contents styles
+====================================================================== */
+
+/* report page css */
+/* Summary of Contents styles */
+@layer components {
+  .report-content h1 {
+    @apply font-bold text-[22px] leading-[26px] text-[#244A77] mb-4;
+  }
+  .report-content h2 {
+    @apply font-bold text-[16px] leading-[16px] text-[#244A77] mb-2;
+  }
+  .report-content h3 {
+    @apply font-semibold text-[15px] leading-[20px] text-[#244A77] mb-2;
+  }
+
+  .report-content p {
+    @apply font-medium text-[16px] leading-[20px] text-[#5A5A5A] mb-4;
+  }
+
+  .report-content ul {
+    @apply mb-4 ml-4;
+  }
+  .report-content ul li {
+    @apply font-medium text-[16px] leading-[20px] mt-4 text-[#5A5A5A];
+  }
+  .report-content ul li strong {
+    @apply font-bold text-[#244A77];
+  }
+  .report-content p strong {
+    @apply font-bold text-[#244A77];
+  }
+
+  .report-content ul:nth-of-type(1) li {
+    @apply list-disc text-[#5A5A5A];
+  }
+
+  .report-content ul:nth-of-type(2),
+  .report-content ul:nth-of-type(3) {
+    @apply list-none;
+  }
+
+  .report-content ul:nth-of-type(2) li,
+  .report-content ul:nth-of-type(3) li {
+    @apply relative pl-4 text-[16px] leading-[20px] mt-4 text-[#5A5A5A];
+  }
+
+  .report-content ul:nth-of-type(2) li::before,
+  .report-content ul:nth-of-type(3) li::before {
+    content: "";
+    @apply absolute left-0 top-2 w-2 h-2 rounded-full border border-[#244A77] bg-transparent;
+  }
+}
+
+
+/* Table of Contents styles */
+@layer components {
+  .report-table-content {
+    @apply w-full border border-[#244A77] border-collapse text-left text-[#5A5A5A] text-[16px] leading-[20px];
+  }
+  
+  .report-table-content h1 {
+    @apply font-bold text-[22px] leading-[26px] text-[#244A77] mb-4;
+  }
+  .report-table-content h2 {
+    @apply font-bold text-[16px] leading-[16px] text-[#244A77] p-2 border-b border-[#5A5A5A];
+  }
+  .report-table-content h3 {
+    @apply font-semibold text-[15px] leading-[20px] text-[#244A77] p-2;
+  }
+
+  .report-table-content p {
+    @apply font-medium text-[16px] leading-[20px] text-[#5A5A5A] border-b border-[#5A5A5A] p-2;
+  }
+  .report-table-content p > strong {
+    @apply text-[#244A77] font-bold;
+  }
+
+  .report-table-content table {
+    @apply w-full border border-[#244A77] rounded-lg overflow-hidden;
+  }
+  .report-table-content th {
+    @apply bg-[#244A77] text-white font-bold px-4 py-2 text-left;
+  }
+  .report-table-content td {
+    @apply border border-[#244A77] px-4 py-2;
+  }
+  .report-table-content tr:nth-child(even) {
+    @apply bg-[#F6FAFF];
+  }
+
+  .report-table-content ul {
+    @apply list-none m-0 p-0 w-full;
+    @apply table border-collapse;
+  }
+
+  .report-table-content ul > li {
+    @apply table-row border-b border-[#244A77];
+  }
+
+  .report-table-content ul > li > strong {
+    @apply table-cell font-bold text-[#244A77] border-r border-[#244A77] p-3 align-top w-1/3;
+  }
+  .report-table-content ul > li > :not(strong) {
+    @apply table-cell px-4 py-4 align-top border border-[#244A77] w-2/3;
+  }
+
+  .report-table-content ul > li > ul > li > :not(strong) {
+    @apply table-cell px-4 py-4 align-top border border-[#244A77] w-2/3;
+  }
 }
