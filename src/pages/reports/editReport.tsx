@@ -172,7 +172,7 @@ export default function EditReport() {
               <input
                 type="text"
                 value={reportId}
-                onChange={(e) => setReportId(e.target.value)}
+                onChange={(e) => setRportId(e.target.value)}
                 className="w-full border border-gray-200 text-black px-4 py-2 rounded-md"
                 placeholder="e.g., RPT001"
                 required

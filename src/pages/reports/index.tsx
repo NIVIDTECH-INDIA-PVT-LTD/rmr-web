@@ -96,7 +96,7 @@ export default function ReportsPage() {
 							<tbody>
 								{reports.length === 0 ? (
 									<tr>
-										<td colSpan="8" className="text-center py-8 text-gray-500">
+										<td colSpan={8} className="text-center py-8 text-gray-500">
 											No reports available.
 										</td>
 									</tr>
