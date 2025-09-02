@@ -40,7 +40,8 @@ export default function EditReport() {
         setRportId(report.reportId || "");
         setTitle(report.title || "");
         setYear(report.year || "");
-        setFeatured(!!report.featured);
+        console.log("Report featured:", report.featured);
+        setFeatured(report.featured === true || report.featured === "true");
 
         // Existing image preview
         if (report.file) setPreview(report.file);
@@ -88,7 +89,7 @@ export default function EditReport() {
     formData.append("reportId", reportId);
     formData.append("title", title);
     formData.append("year", year);
-    formData.append("featured", String(featured));
+    formData.append("featured",featured ? "true" : "false");
     formData.append("tabOne", tabOneHtml);
     formData.append("tabTwo", tabTwoHtml);
     formData.append("publishedDate", new Date().toISOString().slice(0, 10));

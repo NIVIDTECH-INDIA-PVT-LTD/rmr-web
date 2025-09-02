@@ -57,7 +57,7 @@ export default function ReportsSection() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full px-4">
-          {reports.map((report) => (
+          {reports.filter((report) => report.featured == 'true').map((report) => (
             <div
               key={report.id}
               className="bg-white p-2 flex flex-col justify-between items-center h-auto"
