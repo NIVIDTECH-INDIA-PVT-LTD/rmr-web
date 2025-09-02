@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; // 👈 yaha import karo
 
 const headerContent = {
   topBar: {
@@ -25,7 +26,6 @@ const headerContent = {
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/industry" },
     { label: "CONTACT US", href: "/contact" },
-    // { label: "ADMIN", href: "/admin" },
   ],
   socialIcons: [
     { src: "/images/icons/fbicon.svg", alt: "Facebook" },
@@ -37,13 +37,13 @@ const headerContent = {
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/industry" },
     { label: "CONTACT US", href: "/contact" },
-    //  { label: "ADMIN", href: "/admin" },
   ],
 };
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname(); // 👈 current route milega
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +60,7 @@ export default function Header() {
           scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-white"
         } absolute`}
       >
-
+        {/* Desktop Nav */}
         <div className="hidden lg:block">
           <div className="flex text-sm py-3 px-4 sm:px-6 justify-between items-center">
             <p className="font-[Figtree] font-semibold text-[16px] text-[#595959]">
@@ -98,17 +98,23 @@ export default function Header() {
               />
             </Link>
 
-            {/* Nav Links */}
             <nav className="flex items-center gap-6 text-sm font-semibold">
-              {headerContent.navLinks.map(({ label, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="font-[Figtree] font-bold text-[15px] uppercase text-[#392761] border-b border-transparent hover:border-b-[#392761]"
-                >
-                  {label}
-                </Link>
-              ))}
+              {headerContent.navLinks.map(({ label, href }) => {
+                const isActive = pathname === href;
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`font-[Figtree] font-bold text-[15px] uppercase ${
+                      isActive
+                        ? "text-[#392761] border-b-2 border-[#CD4D4A]"
+                        : "text-[#392761] border-b border-transparent hover:border-b-[#CD4D4A]"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="flex gap-2">
@@ -125,6 +131,7 @@ export default function Header() {
           </div>
         </div>
 
+        {/* Mobile Nav */}
         <div className="lg:hidden px-4 sm:px-6 py-3 flex justify-between items-center">
           <Link href="/">
             <Image
@@ -141,7 +148,12 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isMenuOpen ? (
                 <path
                   strokeLinecap="round"
@@ -164,16 +176,23 @@ export default function Header() {
         {isMenuOpen && (
           <div className="block lg:hidden bg-white px-4 pb-4 shadow-lg">
             <nav className="flex flex-col space-y-3">
-              {headerContent.mobileNavLinks.map(({ label, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="py-2 border-b border-gray-100 text-[#392761] font-[Figtree] font-semibold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
+              {headerContent.mobileNavLinks.map(({ label, href }) => {
+                const isActive = pathname === href;
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`py-2 border-b ${
+                      isActive
+                        ? "text-[#392761] font-bold border-b-[#CD4D4A]"
+                        : "text-[#392761] border-gray-100"
+                    } font-[Figtree]`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
         )}

@@ -89,99 +89,101 @@ believe in shaping the future. Together.`,
 
     return (
         <>
-            {/* Top Image */}
-            <div className="flex justify-center">
-                <Image
-                    src={AboutImg}
-                    alt="About Us"
-                    width={1200}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                    priority
-                />
-            </div>
-
-            <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-24 bg-white w-full">
-                <h2 className="text-[#CD4D4A] font-bold text-lg sm:text-xl mb-2">WHO WE ARE</h2>
-
-                <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77] mb-4">
-                        Leading organization in market research
-                    </h2>
-                    <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium whitespace-pre-line leading-relaxed">
-                        We are one of the leading organisation in market research, analysis & forecasting and consulting services provider for Fortune 500 companies. Our purpose is to provide essential statistical surveying information for your organization or association to build trust and solve important problems. <br />
-                        Leverage the best of our research analysts and industry experts who hold a keen interest and enviable expertise of global, regional, and local market intelligence.
-                    </p>
+            <div className="w-full px-0 py-20 md:py-0 md:px-0">
+                {/* Top Image */}
+                <div className="flex justify-center">
+                    <Image
+                        src={AboutImg}
+                        alt="About Us"
+                        width={1200}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                        priority
+                    />
                 </div>
 
-                {sections.map((sec) => (
-                    <div key={sec.id} className="mb-8">
+                <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-24 bg-white w-full">
+                    <h2 className="text-[#CD4D4A] font-bold text-lg sm:text-xl mb-2">WHO WE ARE</h2>
+
+                    <div className="mb-8">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77] mb-4">
-                            {sec.heading}
+                            Leading organization in market research
                         </h2>
                         <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium whitespace-pre-line leading-relaxed">
-                            {sec.desc}
+                            We are one of the leading organisation in market research, analysis & forecasting and consulting services provider for Fortune 500 companies. Our purpose is to provide essential statistical surveying information for your organization or association to build trust and solve important problems. <br />
+                            Leverage the best of our research analysts and industry experts who hold a keen interest and enviable expertise of global, regional, and local market intelligence.
                         </p>
                     </div>
-                ))}
-            </section>
 
-            <div className="pb-12 sm:pb-16 px-4 sm:px-8 lg:px-24 mx-auto">
-                <div
-                    className="flex flex-col lg:flex-row bg-white/90 transition-all duration-300 rounded-2xl overflow-hidden"
-                    style={{ boxShadow: "0 0 15px 0 rgba(17, 12, 79, .1)" }}
-                >
-                    <div className="flex-1 flex flex-col gap-6 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
-                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77]">Nurturing Strategies</h3>
-                        <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
-                            Cover industry ecosystem include syndicate research, CxO report consulting and market tracking
-                        </p>
+                    {sections.map((sec) => (
+                        <div key={sec.id} className="mb-8">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77] mb-4">
+                                {sec.heading}
+                            </h2>
+                            <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium whitespace-pre-line leading-relaxed">
+                                {sec.desc}
+                            </p>
+                        </div>
+                    ))}
+                </section>
 
-                        {cards.map((card) => (
-                            <div
-                                key={card.id}
-                                className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300"
-                            >
-                                <img src={card.icon} alt={card.title} className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
-                                <div>
-                                    <h3 className="text-lg sm:text-xl font-semibold text-[#244A77]">{card.title}</h3>
-                                    <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
-                                        {card.desc}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                <div className="pb-12 sm:pb-16 px-4 sm:px-8 lg:px-24 mx-auto">
+                    <div
+                        className="flex flex-col lg:flex-row bg-white/90 transition-all duration-300 rounded-2xl overflow-hidden"
+                        style={{ boxShadow: "0 0 15px 0 rgba(17, 12, 79, .1)" }}
+                    >
+                        <div className="flex-1 flex flex-col gap-6 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
+                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77]">Nurturing Strategies</h3>
+                            <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+                                Cover industry ecosystem include syndicate research, CxO report consulting and market tracking
+                            </p>
 
-                    <div className="flex-1 bg-[#F6FAFF] px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77]">Get Free Quote</h2>
-                        <p className="mt-2 mb-6 text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
-                            From banking and insurance to wealth management and securities distribution financial
-                        </p>
-
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                            {formFields.map((field) => (
-                                <div key={field.id} className="flex flex-col">
-                                    <input
-                                        type={field.type}
-                                        name={field.id}
-                                        placeholder={field.placeholder}
-                                        value={formData[field.id]}
-                                        onChange={handleChange}
-                                        className="p-3 border-none rounded-md placeholder:text-[#a5a4a4] bg-white focus:outline-none focus:ring-2 focus:ring-[#244A77]"
-                                    />
-                                    {errors[field.id] && (
-                                        <span className="text-red-500 text-sm mt-1">{errors[field.id]}</span>
-                                    )}
+                            {cards.map((card) => (
+                                <div
+                                    key={card.id}
+                                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300"
+                                >
+                                    <img src={card.icon} alt={card.title} className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
+                                    <div>
+                                        <h3 className="text-lg sm:text-xl font-semibold text-[#244A77]">{card.title}</h3>
+                                        <p className="text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+                                            {card.desc}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
-                            <button
-                                type="submit"
-                                className="bg-[#244A77] hover:bg-blue-900 text-white font-semibold py-3 rounded-lg mt-2 transition-colors"
-                            >
-                                Submit
-                            </button>
-                        </form>
+                        </div>
+
+                        <div className="flex-1 bg-[#F6FAFF] px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77]">Get Free Quote</h2>
+                            <p className="mt-2 mb-6 text-[#5A5A5A] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+                                From banking and insurance to wealth management and securities distribution financial
+                            </p>
+
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                                {formFields.map((field) => (
+                                    <div key={field.id} className="flex flex-col">
+                                        <input
+                                            type={field.type}
+                                            name={field.id}
+                                            placeholder={field.placeholder}
+                                            value={formData[field.id]}
+                                            onChange={handleChange}
+                                            className="p-3 border-none rounded-md placeholder:text-[#a5a4a4] bg-white focus:outline-none focus:ring-2 focus:ring-[#244A77]"
+                                        />
+                                        {errors[field.id] && (
+                                            <span className="text-red-500 text-sm mt-1">{errors[field.id]}</span>
+                                        )}
+                                    </div>
+                                ))}
+                                <button
+                                    type="submit"
+                                    className="bg-[#244A77] hover:bg-blue-900 text-white font-semibold py-3 rounded-lg mt-2 transition-colors"
+                                >
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,9 @@ const Footer = ({
   aboutText = "We are one of the leading organisation in market research, analysis & forecasting and consulting services provider for Fortune 500 companies. Our purpose is to provide essential statistical surveying information for your organization or association to build trust and solve important problems.",
 
   quickLinks = [
-    { label: "About Us", href: "#" },
-    { label: "Our Services", href: "#" },
-    { label: "Industry Verticals", href: "#" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Services", href: "/services" },
+    { label: "Industry Verticals", href: "/industry" },
     { label: "Trending Reports", href: "#" },
     { label: "Food & Beverages", href: "#" },
     { label: "Market News", href: "#" },

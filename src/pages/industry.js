@@ -73,47 +73,49 @@ const industries = [
 const Industry = () => {
     return (
         <>
-            <div className="flex justify-center">
-                <Image
-                    src={IndustryBG}
-                    alt="Services Background"
-                    width={1200}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                    priority
-                />
-            </div>
-
-            <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-24">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77] mb-12 text-center">
-                    Industry Verticals
-                </h2>
-
-                <div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-white shadow-md rounded-2xl overflow-hidden border border-[#E0E6EF]"
-                    style={{ boxShadow: "0 0 15px 0 rgba(17, 12, 79, .1)" }}
-                >
-                    {industries.map(({ id, title, desc, icon: Icon }) => (
-                        <div
-                            key={id}
-                            className="group flex flex-col items-center text-center p-6 border-b border-r border-[#E0E6EF] last:border-r-0 lg:last:border-b-0 hover:bg-[#F9FBFF] transition"
-                        >
-                            {/* Icon with rotation on hover */}
-                            <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#244A77]/10 text-[#244A77] mb-4 transform transition-transform duration-700 group-hover:rotate-[360deg]">
-                                <Icon size={28} strokeWidth={2} />
-                            </div>
-
-                            <a href="#" className="text-lg sm:text-xl font-bold text-[#244A77] hover:text-[#CD4D4A] mb-3">
-                                {title}
-                            </a>
-
-                            <p className="text-[#5A5A5A] text-sm sm:text-base leading-relaxed">
-                                {desc}
-                            </p>
-                        </div>
-                    ))}
+            <div className="w-full px-0 py-20 md:py-0 md:px-0">
+                <div className="flex justify-center">
+                    <Image
+                        src={IndustryBG}
+                        alt="Services Background"
+                        width={1200}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                        priority
+                    />
                 </div>
-            </section>
+
+                <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-24">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#244A77] mb-12 text-center">
+                        Industry Verticals
+                    </h2>
+
+                    <div
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-white shadow-md rounded-2xl overflow-hidden border border-[#E0E6EF]"
+                        style={{ boxShadow: "0 0 15px 0 rgba(17, 12, 79, .1)" }}
+                    >
+                        {industries.map(({ id, title, desc, icon: Icon }) => (
+                            <div
+                                key={id}
+                                className="group flex flex-col items-center text-center p-6 border-b border-r border-[#E0E6EF] last:border-r-0 lg:last:border-b-0 hover:bg-[#F9FBFF] transition"
+                            >
+                                {/* Icon with rotation on hover */}
+                                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#244A77]/10 text-[#244A77] mb-4 transform transition-transform duration-700 group-hover:rotate-[360deg]">
+                                    <Icon size={28} strokeWidth={2} />
+                                </div>
+
+                                <a href="#" className="text-lg sm:text-xl font-bold text-[#244A77] hover:text-[#CD4D4A] mb-3">
+                                    {title}
+                                </a>
+
+                                <p className="text-[#5A5A5A] text-sm sm:text-base leading-relaxed">
+                                    {desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
         </>
     );
 };
