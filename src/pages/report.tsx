@@ -8,6 +8,7 @@ import {
   KeyDriversSection,
   MarketOverviewSection,
   SegmentationSection,
+  Tabs,
 } from "@/components/sections/reportSection";
 
 import React, { useState, useEffect } from 'react'
@@ -26,8 +27,8 @@ const Report = () => {
   const [featured, setFeatured] = useState(false);
   const [tabOneEditorState, setTabOneEditorState] = useState();
   const [tabTwoEditorState, setTabTwoEditorState] = useState();
-  const [image, setImage] = useState < File | null > (null);
-  const [preview, setPreview] = useState < string | null > (null);
+  const [image, setImage] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -47,12 +48,12 @@ const Report = () => {
         const htmlToDraft = require("html-to-draftjs").default;
 
         // Tab One
-        if (report.tabOne) {         
+        if (report.tabOne) {
           setTabOneEditorState(report.tabOne);
         }
 
         // Tab Two
-        if (report.tabTwo) {          
+        if (report.tabTwo) {
           setTabTwoEditorState(report.tabTwo);
         }
       })
@@ -63,21 +64,47 @@ const Report = () => {
     <>
       <HeroSection />
       <div className="px-4 py-4 md:px-12 md:py-10">
-        <HeadSection reportTitle={title} year={year} id={reportId} />
         <div className="grid grid-cols-12 gap-6">
-          {/* Left Column */}
           <div className="col-span-12 md:col-span-8 space-y-6">
+            <HeadSection reportTitle={title} year={year} id={reportId} />
+            
             {/* <IntroSection />
             <DefinitionSection />
-            <MarketOverviewSection />
+            // <MarketOverviewSection />
             <KeyDriversSection />
             <ChallengesSection />
             <SegmentationSection /> */}
-            <div dangerouslySetInnerHTML={{ __html: tabOneEditorState }} />
+            
+            {/* <div className="report-content" dangerouslySetInnerHTML={{ __html: tabOneEditorState }} /> */}
+
+            <Tabs
+              summaryContent={
+                <div
+                  className="report-content"
+                  dangerouslySetInnerHTML={{ __html: tabOneEditorState || "" }}
+                />
+              }
+              tableContent={
+                <div
+                  className="report-content"
+                  dangerouslySetInnerHTML={{ __html: tabTwoEditorState || "" }}
+                />
+              }
+            />
+
           </div>
 
           {/* Right Column */}
           <div className="col-span-12 md:col-span-4 h-full mt-8">
+            <div className="flex flex-col gap-3 w-full bg-[#F6FAFF] rounded-xl p-8">
+              <button className="w-full px-4 py-3 cursor-pointer rounded-lg bg-[#244A77] text-white font-figtree font-semibold text-[16px] leading-[20px]">
+                Request Free Sample
+              </button>
+
+              <button className="w-full px-4 py-3 cursor-pointer rounded-lg bg-[#CD4D4A] text-white font-figtree font-bold text-[16px] leading-[20px]">
+                Buy Now
+              </button>
+            </div>
             <IndustryVerticalsSection />
           </div>
         </div>

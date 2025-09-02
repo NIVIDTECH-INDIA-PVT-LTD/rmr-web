@@ -15,7 +15,8 @@ export default function IndustryVerticalsSection() {
   ];
 
   return (
-    <section className="h-full flex flex-col">
+    <section className="h-full flex flex-col mt-6">
+      
       {/* Heading */}
       <div className="p-8 gap-2 w-full bg-[#F6FAFF] rounded-xl">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">

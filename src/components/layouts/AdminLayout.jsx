@@ -28,8 +28,8 @@ export default function AdminLayout({ children }) {
 
         <nav className="flex flex-col gap-3 flex-grow px-2 py-6">
           {navItems.map((item, index) => (
-            <div className="w-full hover:bg-white hover:text-black"  key={index}>
-              <button               
+            <div className="w-full hover:bg-white hover:text-black" key={index}>
+              <button
                 onClick={() => router.push(item.path)}
                 className={`flex items-center gap-3 px-3 py-2 cursor-pointer text-left transition rounded-md w-full ${
                   router.pathname === item.path
@@ -42,22 +42,23 @@ export default function AdminLayout({ children }) {
               </button>
             </div>
           ))}
-
-          <button
-            onClick={handleLogout}
-            className="flex items-center cursor-pointer gap-3 px-3 py-2 rounded-md mt-auto text-red-400 hover:text-white hover:bg-red-600 transition"
-          >
-            <LogOut size={18} />
-            Logout
-          </button>
         </nav>
       </aside>
 
       <div className="flex flex-col flex-1 h-full">
         {/* Header */}
         <header className="h-auto py-4 bg-white border-b px-6 flex items-center justify-between shadow-sm z-10">
-          <h1 className="text-lg font-semibold text-gray-800">Dashboard</h1>
-          <span className="text-gray-600">Welcome, User</span>
+          <div className="flex items-center">
+            <h1 className="text-lg font-semibold text-gray-800">Dashboard |</h1>
+            <span className="text-gray-600 ml-1">Welcome, User</span>
+          </div>
+          <button
+            onClick={handleLogout}
+            className="flex items-center cursor-pointer gap-3 px-3 py-2 bg-gray-400 rounded-md mt-auto text-white hover:text-white hover:bg-red-600 transition"
+          >
+            <LogOut size={18} />
+            Logout
+          </button>
         </header>
 
         {/* main Content */}

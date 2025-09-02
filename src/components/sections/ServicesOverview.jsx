@@ -79,9 +79,9 @@ export default function OurServices() {
               statistical surveying information for your organization or
               association to build trust and solve important problems.
             </p>
-            <button className="bg-[#CD4D4A] text-white font-figtree font-semibold text-[18px] leading-[100%] tracking-[0%] text-center align-middle uppercase py-3 px-6 rounded-full">
+            <a href="/services" className="bg-[#CD4D4A] text-white font-figtree font-semibold text-[18px] leading-[100%] tracking-[0%] text-center align-middle uppercase py-3 px-6 rounded-full">
               VIEW ALL SERVICES
-            </button>
+            </a>
           </div>
 
           <div className="w-full md:w-1/2">

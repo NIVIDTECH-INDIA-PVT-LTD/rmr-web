@@ -71,7 +71,7 @@ export const IndustryVerticals = () => {
 
         <div className="flex justify-center">
           <a
-            href="#"
+            href="/industry"
             className="bg-[#CD4D4A] text-white py-3 px-16 rounded-full font-figtree font-semibold text-[18px] leading-[100%] tracking-[0%] text-center align-middle uppercase"
           >
             LOAD MORE...
