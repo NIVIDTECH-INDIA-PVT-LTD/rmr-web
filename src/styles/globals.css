@@ -66,7 +66,7 @@
 
 
 /* Table of Contents styles */
-@layer components {
+/* @layer components {
   .report-table-content {
     @apply w-full border border-[#244A77] border-collapse text-left text-[#5A5A5A] text-[16px] leading-[20px];
   }
@@ -120,4 +120,4 @@
   .report-table-content ul > li > ul > li > :not(strong) {
     @apply table-cell px-4 py-4 align-top border border-[#244A77] w-2/3;
   }
-}
+} */

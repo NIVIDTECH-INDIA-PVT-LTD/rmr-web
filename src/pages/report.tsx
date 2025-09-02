@@ -86,7 +86,7 @@ const Report = () => {
               }
               tableContent={
                 <div
-                  className="report-table-content"
+                  className="report-content"
                   dangerouslySetInnerHTML={{ __html: tabTwoEditorState || "" }}
                 />
               }
