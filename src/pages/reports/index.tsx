@@ -96,7 +96,7 @@ export default function ReportsPage() {
 							<tbody>
 								{reports.length === 0 ? (
 									<tr>
-										<td colSpan="8" className="text-center py-8 text-gray-500">
+										<td colSpan={8} className="text-center py-8 text-gray-500">
 											No reports available.
 										</td>
 									</tr>
@@ -119,7 +119,7 @@ export default function ReportsPage() {
 													__html: report.tabTwo.slice(0, 40) + "...",
 												}}
 											/>
-											<td className="px-6 py-4">{report.featured ? "Yes" : "No"}</td>
+											<td className="px-6 py-4">{report.featured == 'true' ? "Yes" : "No"}</td>
 											<td className="px-6 py-4 text-center flex justify-center gap-3">
 												<button
 													onClick={() => handleEdit(report)}
