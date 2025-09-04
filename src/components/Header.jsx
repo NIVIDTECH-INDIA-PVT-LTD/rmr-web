@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; // 👈 yaha import karo
+import { usePathname } from "next/navigation";
 
 const headerContent = {
   topBar: {
@@ -25,6 +25,7 @@ const headerContent = {
     { label: "ABOUT US", href: "/about" },
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/industry" },
+    { label: "Reports", href: "/allReports" },
     { label: "CONTACT US", href: "/contact" },
   ],
   socialIcons: [
@@ -36,6 +37,7 @@ const headerContent = {
     { label: "ABOUT US", href: "/about" },
     { label: "OUR SERVICES", href: "/services" },
     { label: "INDUSTRY VERTICALS", href: "/industry" },
+    { label: "Reports", href: "/allReports" },
     { label: "CONTACT US", href: "/contact" },
   ],
 };
@@ -43,7 +45,7 @@ const headerContent = {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname(); // 👈 current route milega
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
