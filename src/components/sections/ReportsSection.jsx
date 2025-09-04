@@ -36,25 +36,35 @@ import Bioplastic from "../../../public/images/icons/Bioplastic .png";
 //   },
 // ];
 
-export default function ReportsSection() {
-
+export default function ReportsSection({ showHeading = true }) {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
-      fetch("/api/reports")
-        .then((res) => res.json())
-        .then(setReports)
-        .catch(() => setReports([]));
-    }, []);
-  
+    fetch("/api/reports")
+      .then((res) => res.json())
+      .then(setReports)
+      .catch(() => setReports([]));
+  }, []);
+
   return (
     <section className="w-full px-4 md:px-24 py-14 bg-white">
       <div className="w-full text-center">
-        <h1 className="font-figtree font-semibold text-[21px] leading-[100%] tracking-[0%] align-middle text-[#244A77] mb-2">Reports</h1>
+        {/* <h1 className="font-figtree font-semibold text-[21px] leading-[100%] tracking-[0%] align-middle text-[#244A77] mb-2">Reports</h1>
 
         <h2 className="font-figtree font-semibold text-[39px] leading-[100%] tracking-[0%] align-middle text-[#636262] mb-4">
           Our Top Reports
-        </h2>
+        </h2> */}
+
+        {showHeading && (
+          <>
+            <h1 className="font-figtree font-semibold text-[21px] text-[#244A77] mb-2">
+              Reports
+            </h1>
+            <h2 className="font-figtree font-semibold text-[39px] text-[#636262] mb-4">
+              Our Top Reports
+            </h2>
+          </>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full px-4">
           {reports.map((report) => (
@@ -85,7 +95,7 @@ export default function ReportsSection() {
               </div>
 
               <a
-                href={"/report?id="+report.title}
+                href={"/report?id=" + report.title}
                 className="font-figtree font-semibold text-[16px] leading-[100%] tracking-[0%] align-middle text-[#CD4D4A] underline decoration-solid underline-offset-[0%] decoration-[0%] mt-4"
               >
                 View Report
@@ -99,7 +109,7 @@ export default function ReportsSection() {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('https://api.example.com/data');
+  const res = await fetch("https://api.example.com/data");
   const data = await res.json();
   return { props: { data } };
 }
